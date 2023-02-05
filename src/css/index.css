@@ -1,0 +1,343 @@
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    height: 100%;
+    font-size: 18px;
+    box-sizing: border-box;
+
+}
+button {
+    white-space: nowrap;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+}
+
+#header {
+    width: 100%;
+    display: block;
+    padding: 20px 90px;
+    background-color: #e0d9ee;
+    box-sizing: border-box;
+}
+.header__container {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: space-between;
+
+}
+.header__date {
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.header__date-text {
+    color: rgb(92, 92, 92);
+}
+#header button {
+    width: 220px;
+    padding: 20px;
+    background-color: #aa8ae9;
+    font-size: 16px;
+}
+.middle__container{
+    display: flex;
+}
+
+#my-form{
+    overflow: hidden;
+}
+.calendar{
+    display: block;
+    width: 80%;
+}
+#weekdays {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 auto;
+}
+#weekdays div {
+    padding: 20px 0;
+    color: #aa8ae9;
+    font-weight: 700;
+    width: 14.28%;
+    font-size: 14px;
+    text-align: center;
+    display: list-item;
+}
+#all-tasks {
+    align-items: center;
+    text-align: left;
+    list-style: none;
+
+}
+.completed {
+    font-size: 12px;
+    text-decoration: line-through;
+    font-style: italic;
+}
+#works_toDoList div{
+    justify-content: normal;
+}
+.complete {
+    color: #58bae4;
+}
+#calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.padding {
+    cursor: default !important;
+    background-color: #FFFCFF !important;
+    box-shadow: none !important;
+}
+#tasks-manager-header{
+    padding-top: 20px;
+    word-wrap: normal;
+    color: #aa8ae9;
+    font-weight: 700;
+    font-size: 20px;
+}
+#addEventButton {
+    padding: 20px;
+    background-color: #aa8ae9;
+    font-size: 16px;
+}
+.day {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    width: calc(14.28571% - 4px);
+    margin: 1px;
+    height: 180px;
+    border: 1px solid #d6d6d6;
+    color: #5f5b5b;
+    font-weight: 700;
+    display: list-item;
+}
+.day:hover {
+    background-color: #e0d9ee;
+}
+.day + #currentDay {
+    background-color:#e8f4fa;
+}
+#event {
+    font-size: 10px;
+    padding: 3px;
+    background-color: #58bae4;
+    color: white;
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
+}
+#toDoList {
+    width: 20%;
+    background-color: #FFFCFF;
+
+}
+
+#newEventModal, #deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 30px;
+    background-image: linear-gradient(340deg, #c9a7e6 20%, #ad69cc 100%);
+
+    border-radius: 5px;
+    width: 700px;
+    top: 100px;
+    left: calc(50% - 400px);
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;;
+}
+#eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+
+}
+#eventTitleInput.error {
+    border: 2px solid red;
+}
+#cancelButton, #deleteButton {
+    background-color: #d36c6c;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color .3s, background-color .3s;
+}
+#saveButton, #closeButton {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color .3s, background-color .3s;
+}
+#eventText {
+    font-size: 14px;
+}
+#modalBackDrop {
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.finished {
+    text-decoration: line-through;
+}
+
+.important {
+    border: 1px solid red;
+}
+
+@media(min-width: 320px){
+    .calendar{
+        width: 100%;
+    }
+    .middle__container{
+        flex-direction: column-reverse;
+    }
+    #toDoList {
+        width: 100%;
+
+    }
+
+    .title_toDoList{
+        padding-left: 50%;
+        padding-top: 40px;
+    }
+
+
+    .day {
+        margin: 0;
+        width: calc(14.28571% );
+        height: 60px;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        border-right: none;
+        border-left: none;
+        font-weight: 700;
+        display: list-item;
+
+    }
+
+
+}
+@media(max-width: 576px){
+    .calendar{
+        width: 100%;
+    }
+    .middle__container{
+        flex-direction: column-reverse;
+    }
+    #toDoList {
+        width: 100%;
+
+    }
+
+    .title_toDoList{
+        padding-left: 50%;
+        padding-top: 40px;
+    }
+
+
+    .day {
+        margin: 0;
+        width: calc(14.28571% );
+        height: 60px;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        border-right: none;
+        border-left: none;
+        font-weight: 700;
+        display: list-item;
+
+    }
+    #weekdays div {
+        font-size: 8px;
+    }
+    .header__date {
+        font-size: 8px;
+        text-align: center;
+        text-transform: capitalize;
+        margin: 5px;
+    }
+
+    #header button {
+        width: 140px;
+        padding: 10px;
+        font-size: 10px;
+    }
+
+}
+@media(min-width: 989px){
+    .calendar{
+        display: block;
+        width: 80%;
+    }
+    .middle__container{
+          display: flex;
+        flex-direction: row;
+    }
+    #calendar {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #toDoList {
+        width: 20%;
+        background-color: #FFFCFF;
+
+    }
+    .title_toDoList{
+        padding-left: 45%;
+        padding-top: 20px;
+        word-wrap: normal;
+        color: #aa8ae9;
+        font-weight: 700;
+        width: 14.28%;
+        font-size: 20px;
+    }
+    .day {
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        width: calc(14.28571%);
+        margin: 1px;
+        height: 180px;
+        border: 1px solid #d6d6d6;
+        color: #5f5b5b;
+        font-weight: 700;
+        display: list-item;
+    }
+
+
+}
+@media(min-width: 990px){
+    .day {
+        width: calc(14.28571% - 4px);
+    }
+
+}
